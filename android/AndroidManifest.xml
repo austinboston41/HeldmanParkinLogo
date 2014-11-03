@@ -9,11 +9,11 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Logo Quiz"
         android:theme="@style/GdxTheme" >
         <activity
             android:name="com.mygdx.game.android.AndroidLauncher"
-            android:label="@string/app_name" 
+            android:label="Logo Quiz"
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
             <intent-filter>

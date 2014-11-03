@@ -1,3 +1,4 @@
+//Relsease 1.0
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
@@ -10,10 +11,10 @@ public class MyGdxGame extends ApplicationAdapter {
     SpriteBatch batch;
     Texture imgBack;
     Texture imgLogo;
-    Texture imgCtg1,imgCtg2,imgCtg3,imgCtg4,imgCtg5,imgCtg6,imgCtg7,imgCtg8;
+    Texture imgCtg1, imgCtg2, imgCtg3, imgCtg4, imgCtg5, imgCtg6, imgCtg7, imgCtg8;
 
     @Override
-    public void create () {
+    public void create() {
         batch = new SpriteBatch();
         imgBack = new Texture("appbackground.jpg");
         imgLogo = new Texture("applogo.png");
@@ -28,7 +29,7 @@ public class MyGdxGame extends ApplicationAdapter {
     }
 
     @Override
-    public void render () {
+    public void render() {
         Gdx.gl.glClearColor(1, 0, 0, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
