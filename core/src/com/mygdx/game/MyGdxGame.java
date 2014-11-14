@@ -17,6 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
 
 public class MyGdxGame extends ApplicationAdapter {
+    int nBool=1;
     SpriteBatch batch;
     Texture imgBack;
     Texture imgLogo;
@@ -116,62 +117,73 @@ public class MyGdxGame extends ApplicationAdapter {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 1 Pressed");
+                nBool=0;
             }
         });
         bCtg2.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 2 Pressed");
+                nBool=0;
             }
         });
         bCtg3.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 3 Pressed");
+                nBool=0;
             }
         });
         bCtg4.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 4 Pressed");
+                nBool=0;
             }
         });
         bCtg5.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 5 Pressed");
+                nBool=0;
             }
         });
         bCtg6.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 6 Pressed");
+                nBool=0;
             }
         });
         bCtg7.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 7 Pressed");
+                nBool=0;
             }
         });
         bCtg8.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("Button 8 Pressed");
+                nBool=0;
             }
         });
     }
 
     @Override
     public void render() {
-        Gdx.gl.glClearColor(1, 0, 0, 0);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(imgBack, 0, 0);
-        batch.draw(imgLogo, 0, 0);
         batch.end();
-        super.render();
-        stage.draw();
+
+        if(nBool==1) {
+            batch.begin();
+            batch.draw(imgLogo, 0, 0);
+            batch.end();
+            super.render();
+            stage.draw();
+        }
     }
 
 
