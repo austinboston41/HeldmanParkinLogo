@@ -1,0 +1,18 @@
+buttons.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+butpassive
+  rotate: false
+  xy: 2, 2
+  size: 200, 80
+  orig: 200, 80
+  offset: 0, 0
+  index: -1
+butpressed
+  rotate: false
+  xy: 204, 2
+  size: 200, 80
+  orig: 200, 80
+  offset: 0, 0
+  index: -1
