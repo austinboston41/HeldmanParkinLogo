@@ -1,0 +1,50 @@
+Work in Progress Report
+
+Major developments/breakthroughs(reference specific code please):
+
+- We incorporated textbuttons into or project.
+- Using texturepacker we built a sprite sheet for all our buttons.
+- Upon pressing a button the buttons will disappear so we can go into the level (..and draw our png onto the screen).
+
+Major Challenges/setbacks( reference specific code please):
+
+- Moving the buttons. For some reason we were initially moving the button image around in the xml but the code was still listening for a click in the corner. We eventually figured out we should be using the  <butname.setPosition>  node.
+
+Any modifications to your specifications/release schedule:
+
+None.
+
+Description of your scratch/test program:
+
+Describe the generic concept you needed to test out:
+
+We wanted to get textbuttons working.
+
+Source any web site/book that helped you with that concept:
+
+http://stackoverflow.com/questions/21488311/libgdx-how-to-create-a-button
+When trying to move around the buttons we also received some great direction from Jose and Jash.
+
+Describe the code and the lesson that you learned from it:
+
+We added learned how to make a stage and drop buttons onto it. Next, we read in our sprite sheet we made which is our skin. Finally, we make a listener that listens for click events.
+
+Describe any challenges that you enjoyed in integrating this scratch code into your major project:
+
+We placed the listener wrong which was remedied quickly. Otherwise it was a smooth transition.
+
+
+
+WIP Rubric
+CriteriaMarkMaxBreakthroughs: Total amount of work is evident
+
+5Challenges: Your lack of breakthroughs are not from lack of effort. You show the many different attempts that did not work.
+
+
+5Documentation: Your journal is clear. Your code clearly links to the sources where you learned new techniques.
+
+
+5Scratch: You clearly isolated a concept that may or may not have been integrated into your main program.
+
+5
+
