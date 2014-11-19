@@ -16,9 +16,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
 
 public class MyGdxGame extends ApplicationAdapter {
-    int nBool=1;
+    int nBool=1, nCredits=0;
     SpriteBatch batch;
-    Texture imgBack, imgCount;
+    Texture imgBack, imgCount,imgCredits;
     Stage stage;
     TextButton bCtg1, bCtg2, bCtg3, bCtg4, bCtg5, bCtg6, bCtg7, bCtg8, bAppLogo;
     TextButton.TextButtonStyle bsCtg1, bsCtg2, bsCtg3, bsCtg4, bsCtg5, bsCtg6, bsCtg7, bsCtg8, bsAppLogo;
@@ -32,6 +32,7 @@ public class MyGdxGame extends ApplicationAdapter {
         batch = new SpriteBatch();
         imgBack = new Texture("appbackground.jpg");
         imgCount = new Texture("Counter.png");
+        imgCredits = new Texture("Credits.png");
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
         font = new BitmapFont();
@@ -185,6 +186,7 @@ public class MyGdxGame extends ApplicationAdapter {
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("applogo Pressed");
                 nBool=0;
+                nCredits=1;
             }
         });
     }
@@ -195,14 +197,17 @@ public class MyGdxGame extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(imgBack, 0, 0);
-        batch.draw(imgCount, 1570, 780);
+        batch.draw(imgCount, 1620, 830);
         batch.end();
 
         if(nBool==1) {
-            batch.begin();
-            batch.end();
             super.render();
             stage.draw();
+        }
+        if(nCredits==1){
+            batch.begin();
+            batch.draw(imgCredits, 0, 0);
+            batch.end();
         }
     }
 
