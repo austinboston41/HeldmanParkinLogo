@@ -1,9 +1,9 @@
 //Release 2.0
-//http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/scenes/scene2d/ui/ImageButton.html
 package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -18,11 +18,10 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 public class MyGdxGame extends ApplicationAdapter {
     int nBool=1;
     SpriteBatch batch;
-    Texture imgBack;
-    //Texture imgLogo;
+    Texture imgBack, imgCount;
     Stage stage;
-    TextButton bCtg1, bCtg2, bCtg3, bCtg4, bCtg5, bCtg6, bCtg7, bCtg8, bApplogo;
-    TextButton.TextButtonStyle bsCtg1, bsCtg2, bsCtg3, bsCtg4, bsCtg5, bsCtg6, bsCtg7, bsCtg8, bsApplogo;
+    TextButton bCtg1, bCtg2, bCtg3, bCtg4, bCtg5, bCtg6, bCtg7, bCtg8, bAppLogo;
+    TextButton.TextButtonStyle bsCtg1, bsCtg2, bsCtg3, bsCtg4, bsCtg5, bsCtg6, bsCtg7, bsCtg8, bsAppLogo;
     BitmapFont font;
     Skin skin;
     TextureAtlas buttonAtlas;
@@ -32,7 +31,7 @@ public class MyGdxGame extends ApplicationAdapter {
     public void create() {
         batch = new SpriteBatch();
         imgBack = new Texture("appbackground.jpg");
-        //imgLogo = new Texture("applogo.png");
+        imgCount = new Texture("Counter.png");
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
         font = new BitmapFont();
@@ -112,14 +111,17 @@ public class MyGdxGame extends ApplicationAdapter {
         bCtg8.setPosition(1620, 120);
         stage.addActor(bCtg8);
 
-        bsApplogo = new TextButton.TextButtonStyle();
-        bsApplogo.font = font;
-        bsApplogo.up = skin.getDrawable("applogo");
-        bsApplogo.down = skin.getDrawable("Dapplogo");
-        bsApplogo.checked = skin.getDrawable("applogo");
-        bApplogo = new TextButton("", bsApplogo);
-        bApplogo.setPosition(0, 0);
-        stage.addActor(bApplogo);
+        bsAppLogo = new TextButton.TextButtonStyle();
+        bsAppLogo.font = font;
+        bsAppLogo.up = skin.getDrawable("applogo");
+        bsAppLogo.down = skin.getDrawable("Dapplogo");
+        bsAppLogo.checked = skin.getDrawable("applogo");
+        bAppLogo = new TextButton("", bsAppLogo);
+        bAppLogo.setPosition(0, 0);
+        stage.addActor(bAppLogo);
+
+
+        //Jash helped us with getting the buttons working.
 
 
         bCtg1.addListener(new ChangeListener() {
@@ -178,7 +180,7 @@ public class MyGdxGame extends ApplicationAdapter {
                 nBool=0;
             }
         });
-        bApplogo.addListener(new ChangeListener() {
+        bAppLogo.addListener(new ChangeListener() {
             @Override
             public void changed (ChangeListener.ChangeEvent event, Actor actor) {
                 System.out.println("applogo Pressed");
@@ -189,13 +191,15 @@ public class MyGdxGame extends ApplicationAdapter {
 
     @Override
     public void render() {
+        Gdx.gl.glClearColor(1, 0, 0, 0);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(imgBack, 0, 0);
+        batch.draw(imgCount, 1570, 780);
         batch.end();
 
         if(nBool==1) {
             batch.begin();
-           // batch.draw(imgLogo, 0, 0);
             batch.end();
             super.render();
             stage.draw();
