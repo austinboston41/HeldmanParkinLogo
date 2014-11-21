@@ -13,7 +13,7 @@
         android:theme="@style/GdxTheme" >
         <activity
             android:name="com.mygdx.game.android.AndroidLauncher"
-            android:label="00HeldmanParkin"
+            android:label="LogoGame"
             android:screenOrientation="landscape"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
             <intent-filter>
