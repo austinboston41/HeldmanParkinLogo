@@ -3,7 +3,6 @@ package com.mygdx.game;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -36,6 +35,7 @@ public class MyGdxGame extends ApplicationAdapter {
         imgCredits = new Texture("Credits.png");
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
+        Gdx.input.setCatchBackKey(true);
         font = new BitmapFont();
         skin = new Skin();
         buttonAtlas = new TextureAtlas(Gdx.files.internal("ctg.pack"));
@@ -217,3 +217,4 @@ public class MyGdxGame extends ApplicationAdapter {
 
 
 }
+//Gdk.input.isKeyPressed(Input.Keys.BACK)
